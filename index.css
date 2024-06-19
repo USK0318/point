@@ -18,7 +18,7 @@ body {
 
 /* Header Styles */
 header {
-    background: linear-gradient(to right, #ff4b2b, #ff416c); /* Gradient background */
+    background: linear-gradient(to right, #a2e9fa, #e876c8); /* Gradient background */
     padding: 10px 0;
     text-align: center;
     width: 100%;
@@ -66,11 +66,27 @@ header nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-    background-image: url('background.jpg'); /* Replace with your background image */
+    background-image: url('https://traininginstitutepune.in/wp-content/uploads/2021/07/6308-scaled.jpg'); /* Replace with your background image path */
     background-size: cover;
     background-position: center;
     text-align: center;
     padding: 150px 0;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better text contrast */
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
 }
 
 .hero h2 {
@@ -78,16 +94,83 @@ header nav ul li a:hover {
     margin-bottom: 20px;
 }
 
+/* Call-to-Action Button */
+.bt {
+    display: inline-block;
+    padding: 19px 30px;
+    background: linear-gradient(to right, #33ccff, #ff99cc);/* Gradient background */
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px; /* Rounded edges */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.bt:hover {
+    background: linear-gradient(to right, #a2e9fa, #e876c8); /* Reverse gradient on hover */
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Enhance shadow on hover */
+}
+
+
 /* About Section */
 .about {
     padding: 100px 0;
     text-align: center;
+    background: linear-gradient(to right, rgba(51, 204, 255, 0.5), rgba(255, 153, 204, 0.5)), url('path/to/your/background-image.jpg'); /* Add gradient and background image */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: #fff;
+}
+
+.about::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text contrast */
+    z-index: 1;
+}
+
+.about .container {
+    position: relative;
+    z-index: 2;
 }
 
 .about h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    text-transform: uppercase; /* Make text uppercase */
+    letter-spacing: 2px; /* Increase letter spacing */
+    color: #fff; /* Ensure text is white */
 }
+
+.about p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: #ddd; /* Light grey color for the paragraph */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about .trainer {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.about .highlight {
+    color: #ff416c; /* Highlight color for specific text */
+    font-weight: bold;
+}
+
 
 /* Courses Section */
 .courses {
@@ -114,7 +197,11 @@ header nav ul li a:hover {
     border-radius: 8px;
     text-align: left;
 }
+.course:hover {
+    transform: translateY(-8px); /* Slight lift on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 
+}
 .course h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
@@ -124,6 +211,93 @@ header nav ul li a:hover {
     font-size: 1rem;
     color: #ccc;
 }
+/* Contact Section */
+.contact {
+    padding: 100px 0;
+    background: linear-gradient(to right, rgba(51, 204, 255, 0.5), rgba(255, 153, 204, 0.5));
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    position: relative; /* Ensure relative positioning for absolute overlay */
+}
+
+.contact::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: transparent; /* No need for overlay when using gradient */
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    margin-bottom: 30px;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent white background */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #f2f2f2;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form .submit-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: rgba(51, 204, 255, 0.5); /* Button color */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form .submit-button:hover {
+    background-color: #ff416c; /* Darker shade on hover */
+}
+
 
 /* Footer */
 footer {
@@ -138,4 +312,3 @@ footer {
 footer p {
     font-size: 0.9rem;
 }
-
